@@ -7,10 +7,10 @@ client_alt_name = @CLIENT_ALT_NAME@
 server_alt_name = @SERVER_ALT_NAME@
 
 [ ca ]
-default_ca = test_root_ca
+default_ca = root_ca
 
-[ test_root_ca ]
-root_ca_dir = testca
+[ root_ca ]
+root_ca_dir = fufu_ca
 
 certificate   = $root_ca_dir/cacert.pem
 database      = $root_ca_dir/index.txt
@@ -19,20 +19,20 @@ private_key   = $root_ca_dir/private/cakey.pem
 serial        = $root_ca_dir/serial
 
 default_crl_days = 7
-default_days     = 1825
+default_days     = 365
 default_md       = sha256
 
-policy          = test_root_ca_policy
+policy          = root_ca_policy
 x509_extensions = certificate_extensions
 
-[ test_root_ca_policy ]
+[ root_ca_policy ]
 commonName = supplied
-stateOrProvinceName = optional
-countryName = optional
-emailAddress = optional
-organizationName = optional
-organizationalUnitName = optional
-domainComponent = optional
+stateOrProvinceName = Singapore
+countryName = Singapore
+emailAddress = office@fufutechnologies.com
+organizationName = Fufu Technologies Pte. Ltd.
+organizationalUnitName = Fufu
+domainComponent = fufutechnologies.com
 
 [ certificate_extensions ]
 basicConstraints = CA:false
